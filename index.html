@@ -3,6 +3,8 @@
 
 <head>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,37 +12,289 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
 
 </head>
 
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const quotes = [
+        {
+            text: "Pure mathematics is, in its way, the poetry of logical ideas.",
+            author: "Albert Einstein"
+        },
+        {
+            text: "Mathematics is the music of reason.",
+            author: "James Joseph Sylvester"
+        }
+    ];
+
+    let index = 0;
+
+    const quoteEl = document.getElementById("quote");
+    const authorEl = document.getElementById("author");
+
+    function changeQuote(){
+        index = (index + 1) % quotes.length;
+
+        // fade out
+        quoteEl.style.opacity = 0;
+        authorEl.style.opacity = 0;
+
+        setTimeout(() => {
+            quoteEl.textContent = "“" + quotes[index].text + "”";
+            authorEl.textContent = "— " + quotes[index].author;
+
+            // fade in
+            quoteEl.style.opacity = 1;
+            authorEl.style.opacity = 1;
+        }, 300);
+    }
+
+    setInterval(changeQuote, 5000);
+});
+</script>
+
 <body>
 
-<section class="container">
+<nav class="navbar">
 
-<div class="left">
-<img src="profile.jpeg" alt="Profile">
+<div class="nav-logo">
+Amogh Pete Shenoy
 </div>
 
-<div class="right">
+<div class="nav-links">
 
-<h1>Hello</h1>
+<a href="#">Home</a>
+<a href="#about">About Me</a>
+<a href="#projects">Projects / Research Papers</a>
+<a href="#courses">Courses</a>
 
-<h2>A Bit About Me</h2>
+<div class="contact-menu">
 
-<p>
-I'm a paragraph. Click here to add your own text and edit me.
-I'm a great place for you to tell a story and let your users
-know a little more about you.
+<a href="#">Contact</a>
+
+<div class="contact-dropdown">
+
+<h3>Contact</h3>
+
+<p class="contact-subtitle">
+Looking forward to hearing from you
 </p>
 
-<div class="buttons">
+<div class="contact-item">
 
-<div class="btn">Resume</div>
-<div class="btn">Projects</div>
-<div class="btn">Contact</div>
+<strong>Phone</strong>
+
+<div class="contact-phone">
+<i class="fa-solid fa-phone"></i>
+<span>+91-9845255913</span>
+</div>
 
 </div>
+
+<div class="contact-item">
+<strong>Email</strong>
+
+<a href="mailto:aps24ms227@iiserkol.ac.in" class="contact-email">
+<i class="fa-solid fa-envelope"></i>
+aps24ms227@iiserkol.ac.in
+</a>
+
+<a href="mailto:25f2004569@ds.study.iitm.ac.in" class="contact-email">
+<i class="fa-solid fa-envelope"></i>
+25f2004569@ds.study.iitm.ac.in
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="quote-box">
+
+<p class="quote" id="quote">
+“Pure mathematics is, in its way, the poetry of logical ideas.”
+</p>
+
+<p class="author" id="author">
+— Albert Einstein
+</p>
+
+</div>
+
+</section>
+
+<section id="about" class="about-section">
+
+<div class="about-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="about-left">
+
+    <div class="about-sticky">
+
+        <img src="profile.jpeg" alt="Profile">
+
+        <a href="Amogh-CV.pdf" target="_blank" class="cv-box">
+            View my CV
+        </a>
+
+    </div>
+
+</div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="about-right">
+
+        <h2>About Me</h2>
+
+        <p>
+        I am currently a second year student at IISER Kolkata with a strong interest in
+        mathematics and computer science. I enjoy exploring difficult
+        concepts, understanding how systems work, and applying ideas to small projects
+        and experiments.
+        </p>
+
+        <p>
+        Research Interests – Pure Mathematics: My interests lie in probability theory and mathematical statistics,
+        grounded in rigorous real analysis and algebra. I am particularly interested in understanding
+        macroscopic order through limit theorems, random variables, and stochastic mean field approximations.
+        </p>
+
+        <p>
+        Applied Mathematics & Data-Oriented Research: My interests lie in applied probability and modeling complex systems.
+        I focus on translating theoretical models into data-driven analysis and individual-based simulations,
+        emphasizing computational experimentation and algorithmic implementation using Python.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+<section id="projects" class="about-section">
+
+<div class="about-content">
+
+<h2>Projects / Research Papers</h2>
+
+<h3>Projects</h3>
+
+<div class="project-header">
+    <h4>Stability Landscape Analysis of Hardy–Weinberg Equilibrium in Evolving Populations</h4>
+    <span class="project-date">11th March 2026 – Present</span>
+</div>
+
+<p>We aim to develop a model that quantifies a population’s buffer capacity, as opposed to the simple binary check used to verify if a given population follows the HWE. Essentially, we want to determine how much a population can withstand specific stressors such as genetic drift, migration rates, or non-random mating before it shifts into a different evolutionary state.
+
+The model will perform a sensitivity analysis on population data, predicting both the "distance" to a state change and the primary drivers to that instability.
+</p>
+
+<p>Members - Wordson Robert, Gautam Sumesh Menon, Amogh Pete Shenoy, Sahil Singh</p>
+
+</div>
+
+</section>
+
+<section id="courses" class="about-section">
+
+<div class="about-content">
+
+<h2>Courses</h2>
+
+<div class="project-header">
+    <h3>IISER Kolkata</h3>
+    <span class="project-date">CGPA - 8.18</span>
+</div>
+
+<div class="project-header">
+    <h4>Semester - I</h4>
+    <span class="project-date">SGPA - 8.54</span>
+</div>
+
+<ul class="course-list">
+
+<li class="course-item">
+    <div class="course-title">Introduction to Computer Programming</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: A+</span>
+        <a href="pdfs/probability.pdf" target="_blank" class="course-link">
+            View Notes
+        </a>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Mathematics - I</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: B+</span>
+        <a href="pdfs/probability.pdf" target="_blank" class="course-link">
+            View Notes
+        </a>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Mechanics - I</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: B+</span>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Elements of Chemistry - I</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: A</span>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Communicative English - I</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: B+</span>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Introduction to Biology - I</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: B</span>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Biology Laboratory - I</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: A</span>
+    </div>
+</li>
+
+<li class="course-item">
+    <div class="course-title">Introduction to Earth Science</div>
+
+    <div class="course-hover">
+        <span class="course-grade">Grade: B+</span>
+    </div>
+</li>
+
+</ul>
 
 </div>
 
